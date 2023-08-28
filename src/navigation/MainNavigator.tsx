@@ -8,8 +8,14 @@ const Stack = createStackNavigator();
 
 export const MainNavigator = () => {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="ProductsScreen" component={ProductScreen} />
+        <Stack.Navigator
+            screenOptions={{
+                cardStyle: {
+                    backgroundColor: '#FFFFFF',
+                }
+            }}
+        >
+            <Stack.Screen name="ProductsScreen" options={{ headerTitleAlign: 'center', title: 'Innova Store' }} component={ProductScreen} />
         </Stack.Navigator>
     )
 }

@@ -10,6 +10,7 @@ import { ProductsProvider } from './src/context/products/ProductsProvider';
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar style='light'/>
       <ProductsProvider>
         <MainNavigator/>
       </ProductsProvider>
