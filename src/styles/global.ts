@@ -4,7 +4,8 @@ import { FONT, SIZES } from "../constants/typography";
 export const GLOBAL = StyleSheet.create({
     // REUSABLES
     container: {
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        paddingBottom: 10
     },
 
     title: {

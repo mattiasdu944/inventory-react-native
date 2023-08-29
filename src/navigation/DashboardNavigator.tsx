@@ -33,7 +33,7 @@ export const  DashboardNavigation = () => {
                 drawerActiveTintColor: COLORS.primary,
                 
             }}
-        >
+        >   
             <Drawer.Screen 
                 name="ProductsScreen" 
                 options={{ 

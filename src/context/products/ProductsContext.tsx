@@ -1,8 +1,8 @@
 import { createContext } from 'react'
-import { Product } from '../../interfaces/products/product';
+import { IProduct } from '../../interfaces/products/product';
 
 interface ContextProps {
-    products: Product[] ;
+    products: IProduct[] ;
     isLoading: boolean;
 }
 

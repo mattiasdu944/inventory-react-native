@@ -4,11 +4,15 @@ import { FONT } from '../constants/typography';
 
 import { AuthNavigator } from './AuthNavigator';
 import { DashboardNavigation } from './DashboardNavigator';
+import { useAuth } from '../hooks';
 
 
 const Stack = createStackNavigator();
 
 export const MainNavigator = () => {
+
+    const { status } = useAuth();
+    
     return (
         <Stack.Navigator
             initialRouteName='AuthNavigator'
@@ -20,8 +24,11 @@ export const MainNavigator = () => {
             }}
         
         >
-            <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
-            <Stack.Screen name="DashboardNavigation" component={DashboardNavigation} />
+            {
+                status == 'authenticated'
+                ? <Stack.Screen name="DashboardNavigation" component={DashboardNavigation} />
+                : <Stack.Screen name="AuthNavigator" component={AuthNavigator} /> 
+            }
         </Stack.Navigator>
     )
 }

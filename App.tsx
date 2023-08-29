@@ -2,9 +2,9 @@ import 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { StatusBar } from 'expo-status-bar';
 import { MainNavigator } from './src/navigation/MainNavigator';
 import { ProductsProvider } from './src/context/products/ProductsProvider';
+import { AuthProvider } from './src/context/auth/AuthProvider';
 
 export default function App() {
 
@@ -20,10 +20,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar style='light' />
-      <ProductsProvider>
-        <MainNavigator />
-      </ProductsProvider>
+      <AuthProvider>
+        <ProductsProvider>
+          <MainNavigator />
+        </ProductsProvider>
+      </AuthProvider>
     </NavigationContainer>
   );
 }

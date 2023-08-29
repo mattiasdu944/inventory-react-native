@@ -1,17 +1,21 @@
-import React from 'react'
-import { View, TextInput, Text } from 'react-native';
-import { GLOBAL } from '../../styles/global';
-import { Button } from '../ui/Button';
 import { useState } from 'react';
+import { View, TextInput, Text } from 'react-native';
+
+import { useAuth } from '../../hooks';
+import { Button } from '../ui/Button';
+
+import { GLOBAL } from '../../styles/global';
 import { COLORS } from '../../constants/colors';
 
 export const LoginForm = () => {
+
+    const { login } = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = () => {
-        console.log({email, password });
+        login(email, password)
     };
 
     return (
