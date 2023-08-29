@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native';
+import { TouchableOpacity, Text, Image } from 'react-native';
 
 import { Product } from "../../interfaces/products/product"
 import { GLOBAL } from '../../styles/global';
@@ -10,12 +10,12 @@ interface Props {
 
 export const ProductCard = ({ product }: Props) => {
     return (
-        <View >
+        <TouchableOpacity style={ GLOBAL.cardContainer }>
             <Image
                 style={ GLOBAL.productCardImage }
                 source={{ uri: 'https://store.innovacode.online' + product.images[0].url }}
             />
-            <Text>{ product.name }</Text>
-        </View>
+            <Text numberOfLines={1} style={[ GLOBAL.subTitle ]}>{ product.name }</Text>
+        </TouchableOpacity>
     )
 }
