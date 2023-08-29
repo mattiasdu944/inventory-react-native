@@ -2,18 +2,24 @@ import { StyleSheet } from 'react-native';
 import { FONT, SIZES } from "../constants/typography";
 
 export const GLOBAL = StyleSheet.create({
+    // REUSABLES
     container: {
         paddingHorizontal: 20
     },
 
     title: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.large
+        fontSize: SIZES.xLarge
     },
 
     subTitle: {
         fontFamily: FONT.medium,
         fontSize: SIZES.medium
+    },
+
+    subTitle2: {
+        fontFamily: FONT.medium,
+        fontSize: SIZES.small
     },
 
     text: {
@@ -22,6 +28,7 @@ export const GLOBAL = StyleSheet.create({
     },
 
     textInput: {
+        fontFamily: FONT.regular,
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
@@ -30,6 +37,23 @@ export const GLOBAL = StyleSheet.create({
         width: '100%'
     },
 
+    // AUTHENTICATION
+    loginForm: {
+        backgroundColor: '#fff',
+        width: '100%',
+        paddingVertical: 30,
+        borderRadius: 8,
+        paddingHorizontal: 20,
+        shadowColor: "rgba(70,79,229, 0.5)",
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity:  0.20,
+        shadowRadius: 5.62,
+        elevation: 8,
+    },
+    // PRODUCTS
     productList:{
         flexDirection:'row',
         marginTop: 40,
@@ -53,7 +77,6 @@ export const GLOBAL = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#fff',
         width: '45%',
-        // alignItems: 'center'
     },
 
     productCardImage: {
