@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { ProductScreen } from '../screens';
 import { FONT } from '../constants/typography';
+import { DashboardNavigation } from './DashboardNavigator';
 
 
 const Stack = createStackNavigator();
@@ -11,6 +12,7 @@ export const MainNavigator = () => {
     return (
         <Stack.Navigator
             screenOptions={{
+                headerShown: false,
                 cardStyle: {
                     backgroundColor: '#FFFFFF',
                 },
@@ -20,7 +22,8 @@ export const MainNavigator = () => {
             }}
         
         >
-            <Stack.Screen name="ProductsScreen" options={{ headerTitleAlign: 'center', title: 'Innova Store' }} component={ProductScreen} />
+            <Stack.Screen 
+                name="DashboardNavigation" component={DashboardNavigation} />
         </Stack.Navigator>
     )
 }
