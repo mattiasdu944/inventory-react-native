@@ -54,6 +54,7 @@ export const GLOBAL = StyleSheet.create({
         shadowRadius: 5.62,
         elevation: 8,
     },
+
     // PRODUCTS
     productList:{
         flexDirection:'row',
@@ -86,5 +87,30 @@ export const GLOBAL = StyleSheet.create({
         height: 125,
         marginBottom: 20,
         marginHorizontal: 'auto'
-    }
+    },
+
+    // CATEGORIES
+    categoryCard: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        columnGap: 10,
+        borderRadius: 10,
+        backgroundColor: '#fff',
+        paddingHorizontal: 20,
+        paddingVertical: 30,
+        marginBottom: 20,
+        shadowColor: "rgba(70,79,229, 0.5)",
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity:  0.20,
+        shadowRadius: 5.62,
+        elevation: 8,
+    },
+    categoryCardImage: {
+        maxWidth: 80,
+        width: '100%',
+        height: 80,
+    },
 })

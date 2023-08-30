@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { MainNavigator } from './src/navigation/MainNavigator';
 import { ProductsProvider } from './src/context/products/ProductsProvider';
 import { AuthProvider } from './src/context/auth/AuthProvider';
+import { CategoryProvider } from './src/context/categories/CategoryProvider';
 
 export default function App() {
 
@@ -22,7 +23,9 @@ export default function App() {
     <NavigationContainer>
       <AuthProvider>
         <ProductsProvider>
-          <MainNavigator />
+          <CategoryProvider>
+            <MainNavigator />
+          </CategoryProvider>
         </ProductsProvider>
       </AuthProvider>
     </NavigationContainer>
