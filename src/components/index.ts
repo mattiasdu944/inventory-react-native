@@ -12,4 +12,5 @@ export { CategoryCard } from "./categories/CategoryCard";
 export { Blob } from "./ui/Blob";
 export { Button } from "./ui/Button";
 export { Header } from "./ui/Header";
+export { LoadingView } from "./ui/LoadingView";
 
