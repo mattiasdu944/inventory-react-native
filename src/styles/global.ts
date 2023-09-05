@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { FONT, SIZES } from "../constants/typography";
+import { COLORS } from '../constants/colors';
 
 export const GLOBAL = StyleSheet.create({
     // REUSABLES
@@ -26,6 +27,19 @@ export const GLOBAL = StyleSheet.create({
     text: {
         fontFamily: FONT.regular,
         fontSize: SIZES.small
+    },
+
+    // COMPONENTS
+    floatingActionButton: {
+        bottom: 25,
+        right: 25,
+        position: 'absolute',
+        backgroundColor: COLORS.primary,
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 15,
     },
 
     textInput: {

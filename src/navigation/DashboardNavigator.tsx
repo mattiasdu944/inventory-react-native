@@ -38,8 +38,10 @@ export const  DashboardNavigation = () => {
                 name="ProductsScreen" 
                 options={{ 
                     title:'Innova Store',
+                    drawerLabel: 'Productos',
                     drawerIcon: ({ color }) => <Octicons name="home" size={18} color={color} /> 
                 }} 
+                
                 component={ProductScreen}
             />
         </Drawer.Navigator>

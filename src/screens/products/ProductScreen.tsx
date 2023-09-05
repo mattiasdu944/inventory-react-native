@@ -3,7 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 
 import { useProducts } from '../../hooks';
 import { GLOBAL } from '../../styles/global';
-import { ProductCard, SearchProductInput, Header } from '../../components';
+import { ProductCard, SearchProductInput, Header, FloatingActionButton } from '../../components';
 
 export const ProductScreen = () => {
     
@@ -16,18 +16,21 @@ export const ProductScreen = () => {
     }
 
     return (
-        <ScrollView style={{ flex:1 }}>
-            <View style={ GLOBAL.container }>
-                <Header/>
-                <SearchProductInput/>
-                <View style={ GLOBAL.productList }>
-                    {
-                        products.map( (product) => (
-                            <ProductCard key={ product._id } product={ product }/>
-                        ))
-                    }
+        <>
+            <ScrollView style={{ flex:1, position: 'relative' }}>
+                <View style={{...GLOBAL.container, flex: 1 }}>
+                    <Header/>
+                    <SearchProductInput/>
+                    <View style={ GLOBAL.productList }>
+                        {
+                            products.map( (product) => (
+                                <ProductCard key={ product._id } product={ product }/>
+                            ))
+                        }
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+            <FloatingActionButton/>
+        </>
     )
 }

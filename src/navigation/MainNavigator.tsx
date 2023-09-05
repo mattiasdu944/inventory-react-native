@@ -1,10 +1,10 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import { FONT } from '../constants/typography';
 
 import { AuthNavigator } from './AuthNavigator';
 import { DashboardNavigation } from './DashboardNavigator';
 import { useAuth } from '../hooks';
+import { LoadingView } from '../components';
 
 
 const Stack = createStackNavigator();
@@ -12,6 +12,10 @@ const Stack = createStackNavigator();
 export const MainNavigator = () => {
 
     const { status } = useAuth();
+
+    if( status === 'ckecking' ){
+        return <LoadingView/>
+    }
     
     return (
         <Stack.Navigator

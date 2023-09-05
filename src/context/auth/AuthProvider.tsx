@@ -28,14 +28,13 @@ export const AuthProvider = ({ children }:{ children:  ReactNode}) => {
         }
 
         try {
-            const { data } = await storeApi.get('/auth/user',{
+            const { data} = await storeApi.get('/auth/user',{
                 headers: {
                     Authorization: `Bearer ${ token }`
                 }
             });
-
-            dispatch({ type:'Login', payload: { user: data.user, token: token! } });
-            
+           
+            dispatch({ type:'Login', payload: { user: {...data}, token: token! } });
         } catch (error) {
             console.log(error);
         }
