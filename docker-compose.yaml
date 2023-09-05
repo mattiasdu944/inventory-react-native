@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mongo:5.0.0
+    container_name: database
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
+  app:
+    depends_on:
+      - db
+    restart: always
+    container_name: express-app
+    image: mattidu944/inventory-express:1.0.0
+    ports:
+      - "${PORT}:${PORT}"
+
+    environment:
+      PORT: ${PORT}
+      MONGO_URL: ${MONGO_URL}
+      JWT_SECRET: ${JWT_SECRET} 

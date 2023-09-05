@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }:{ children:  ReactNode}) => {
 
         if( !token ){
             dispatch({ type:'Logout' });
+            return;
         }
 
         try {
@@ -32,7 +33,7 @@ export const AuthProvider = ({ children }:{ children:  ReactNode}) => {
                     Authorization: `Bearer ${ token }`
                 }
             });
-            
+
             dispatch({ type:'Login', payload: { user: data.user, token: token! } });
             
         } catch (error) {
@@ -49,7 +50,7 @@ export const AuthProvider = ({ children }:{ children:  ReactNode}) => {
         try {
             setIsLoading( true );
             const { data } = await storeApi.post('/auth/login', { email, password });
-            
+            console.log(data);
             const token = JSON.stringify(data.token);
             await AsyncStorage.setItem('AUTH_TOKEN', token);
             dispatch({ type: 'Login', payload: { token: data.token, user: data.user } });
@@ -57,8 +58,8 @@ export const AuthProvider = ({ children }:{ children:  ReactNode}) => {
             setIsLoading( false )
 
         } catch (error) {
-            if ( axios.isAxiosError(error) ){
-                // showToast( 'error', 'Credenciales incorrectas' )
+            if ( axios.isAxiosError(error) ){   
+                console.log(error);
             }
         } finally {
             setIsLoading( false )

@@ -25,7 +25,7 @@ export const MainNavigator = () => {
         
         >
             {
-                status == 'authenticated'
+                status === 'authenticated'
                 ? <Stack.Screen name="DashboardNavigation" component={DashboardNavigation} />
                 : <Stack.Screen name="AuthNavigator" component={AuthNavigator} /> 
             }
