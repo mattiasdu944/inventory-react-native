@@ -4,8 +4,8 @@ import { COLORS } from '../../constants/colors';
 
 export const LoadingView = () => {
   return (
-    <View>
-        <ActivityIndicator color={COLORS.primary} size={ 30 }/>
+    <View style={{ flex: 1, justifyContent:'center' }}>
+        <ActivityIndicator size={ 60 } color={ COLORS.primary }/>
     </View>
   )
 }
